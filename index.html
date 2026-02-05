@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAUNDRY SERVICES</title>
+    <style>
+     *{
+       margin: 0;
+       padding: 0;
+       font-family: 'Poppins', sans-serif;
+     }
+
+     #nav{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 60px;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+     }
+
+     .mid{
+        display: flex;
+        gap: 20px;
+        color: grey;
+     }
+
+     .username{
+        font-size: smaller;
+        border: 1px solid rgb(217, 242, 251);
+        background-color: rgb(230, 243, 248);
+        color: rgb(86, 185, 224);
+        padding: 10px 20px;
+        border-radius: 10px;
+        margin-right: 40px;
+     }
+
+     .logo{
+        margin-left: 20px;
+     }
+     .hero{
+        height: calc(100vh - 60px); 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 80px;
+        box-sizing: border-box;
+     }
+
+     .text{
+        max-width: 50%;
+     }
+
+     .image img{
+        width: 400px;
+        height: auto;
+     }
+     #achiv{
+      width: 100%;
+      height: 100px;
+      background-color:rgb(86, 185, 224) ;
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      justify-content: space-around;
+      align-items: center;
+     }
+     #service{
+       height: calc(100vh - 60px);
+       background-color: rgb(214, 218, 221);
+       padding-top: 100px;
+       display: flex;
+       gap: 15px;
+       justify-content: center;
+     }
+     #pdts
+     {
+      width: 50%;
+      height: 90%;
+      background-color: white;
+      border-radius: 20px;
+     }
+     .rightside{
+      width: 30%;
+      height: 90%;
+      background-color:rgb(214, 218, 221) ;
+       border-radius: 20px;
+       display: flex;
+       flex-direction: column;
+       gap: 15px;
+     }
+     #cart{
+      height: 55%;
+      width: 100%;
+      background-color: white;
+      border-radius: 20px;
+     }
+     #book{
+      height: 40%;
+      width: 93%;
+      background-color: white;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding-left: 20px;
+     }
+     .end{
+      height: calc(100vh - 60px);
+     }
+     #end1{
+      width: 100%;
+      height: 35%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      gap: 170px;
+     }
+       #end2{
+      width: 100%;
+      height: 35%;
+      background-color:rgb(40, 156, 201);
+      display: flex;
+     }
+       #end3{
+      width: 100%;
+      height: 35%;
+      background-color: rgb(214, 218, 221);
+     }
+     .end{
+      background-color: white;
+     }
+     #end2{
+      display: flex;
+      align-items: center;
+     }
+     #end2b{
+      display: flex;
+      flex-direction: column;
+      width: 25%;
+      margin-right: 10px;
+     }
+     #end2a{
+      width: 33%;
+      margin-right: 150px;
+      color: white;
+      font-size: 45px;
+      padding-left: 100px;
+     }
+      #end2c{
+      width: 33%;
+      padding-bottom: 5px;
+     }
+     #but1,#but2,#but3,#but4,#but5,#but6{
+      width: 170px;
+      height: 40px;
+      border: 0px;
+      border-radius: 10px;
+     }
+     #pd1,#pd2,#pd3,#pd4,#pd5,#pd6{
+      width: 190px;
+      height: 40px;
+      padding-left: 30px;
+      padding-top: 15px;
+      color: rgb(79, 79, 79);
+     }
+     #p1,#p2,#p3,#p4,#p5,#p6{
+      width: 170px;
+      height: 40px;
+      padding-top: 15px;
+      color:rgb(26, 108, 189)
+     }
+     .cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 18px;
+     }
+     .cart-table th:nth-child(1),
+.cart-table td:nth-child(1) { width: 60px; text-align: center; }
+
+.cart-table th:nth-child(2),
+.cart-table td:nth-child(2) { width: 160px; text-align: left; }
+
+.cart-table th:nth-child(3),
+.cart-table td:nth-child(3) { width: 80px; text-align: center; }
+    .cart-table td {
+  padding: 0.2px;   /* adds vertical + horizontal space */
+  height: 30px;         /* increases row height */
+}
+
+.cart-table tr {
+  border-bottom: 1px solid transparent;   /* creates space-like effect */
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6); /* dim background */
+    justify-content: center;
+    align-items: center;
+}
+
+#box {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+#qr {
+    width: 250px;
+    border-radius: 10px;
+}
+
+
+
+/* ---------------- MOBILE RESPONSIVE  ---------------- */
+@media (max-width: 768px) {
+
+  .nav {
+      flex-direction: column;
+      height: auto;
+      gap: 10px;
+  }
+
+  .mid {
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+  }
+
+  .hero {
+      flex-direction: column-reverse;
+      padding: 20px;
+      height: auto;
+      text-align: center;
+  }
+
+  .hero .text {
+      max-width: 100%;
+  }
+
+  .hero img {
+      width: 250px;
+  }
+
+  .achiv {
+      flex-wrap: wrap;
+      height: auto;
+      padding: 20px;
+      gap: 20px;
+      text-align: center;
+  }
+
+  .service {
+      flex-direction: column;
+      height: auto;
+      padding: 20px;
+  }
+
+  #pdts, .rightside {
+      width: 100%;
+      height: auto;
+  }
+
+  #book input {
+      width: 100% !important;
+  }
+
+  .book3 {
+      flex-direction: column;
+      gap: 15px !important;
+  }
+
+  #cart div {
+      padding-left: 0 !important;
+      text-align: center;
+  }
+
+  .cart-table th:nth-child(2),
+  .cart-table td:nth-child(2) {
+      width: auto;
+  }
+
+  #end1 {
+      flex-direction: column;
+      gap: 20px;
+      height: auto;
+      padding: 20px;
+  }
+
+  #end2 {
+      flex-direction: column;
+      height: auto;
+      padding: 20px;
+  }
+
+  #end2a {
+      margin-right: 0;
+      padding-left: 0;
+      text-align: center;
+  }
+
+  #end2b, #end2c {
+      width: 100%;
+      margin-right: 0;
+      align-items: center;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div id="nav">
+     <div class="logo">
+        LOGO
+     </div>
+
+     <div class="mid">
+        <a style="text-decoration: none; color: grey;"
+        href="#nav"><div>Home</div></a>
+        <a style="text-decoration: none; color: grey;"
+        href="#service"><div>Service</div></a>
+        <a style="text-decoration: none; color: grey;"
+        href="#achiv"><div>About us</div></a>
+       <a style="text-decoration: none; color: grey;"
+       href="#achiv"><div>Contact us</div> </a> 
+     </div>
+
+     <div class="username">
+       Username
+     </div>
+    </div>
+
+    <div class="hero">
+        <div class="text">
+            <p style="color: rgb(117, 113, 113); margin-bottom: 15px; font-size: 50px; font-weight:1000;">Revitalize Your</p>
+            <p style="color: rgb(117, 113, 113); margin-bottom: 15px; font-size: 50px; font-weight:1000;">Clothes with Expert</p>
+            <p style="color: rgb(14, 180, 246); margin-bottom: 15px; font-size: 50px;  font-weight:1000;">Laundry Services!</p>
+            <p style="color: rgb(117, 113, 113); margin-bottom: 20px;">
+                From premium dry cleaning to swift wash and fold, we deliver care and convenience. 
+                Schedule a pickup and rediscover the freshness of your clothes today!
+            </p>
+
+            <button 
+            style="margin-top: 20px;
+                   background-color:rgb(14, 180, 246);
+                   border: none;
+                   color: white;
+                   height: 60px;
+                   padding: 0 30px;
+                   border-radius: 15px;
+                   font-size: 16px;">
+                Book a service today!
+            </button>
+        </div>
+
+        <div class="image">
+            <img src="https://media.istockphoto.com/id/1039504420/vector/vector-washing-machine-color-design.jpg?s=612x612&w=0&k=20&c=NHNtj9fI9MYTms09Xn5A3YgnV1rUxQMVz24N1rEY3W8=" alt="">
+        </div>
+    </div>
+    <div id="achiv">
+      <div class="ach1"
+       style="font-size: 30px;"
+      > Our Achievements</div>
+      <div class="ach"> 
+         <p 
+         style="font-size: 30px;"
+         >15+</p>
+        <p>Laundry Services</p>
+      </div>
+      <div class="ach">
+         <p
+         style="font-size: 30px;"
+         >240+</p>
+         <p>Happy Customers</p>
+      </div>
+      <div class="ach">
+         <p 
+         style="font-size: 30px;"
+         >2+ Yrs</p>
+         <p>Experience</p>
+      </div>
+    </div>
+
+  <article id="service">
+   <div id="pdts">
+      <div class="pdthead"
+      style="padding: 20px 20px; font-size: 30px; color: rgb(87, 85, 85);">
+         Our Services
+      </div>
+      <article style="display: flex;">
+      <div id="product">
+            <div id="pd1"> Dry Cleaning</div>
+            <div id="pd2"> Wash and Fold</div>
+            <div id="pd3"> Ironing</div>
+            <div id="pd4"> Stain Removal</div>
+            <div id="pd5">Leather & Suede Cleaning</div>
+            <div id="pd6">Wedding Dress Cleaning</div>
+         </div>
+         <div id="price">
+            <div id="p1">₹200</div>
+            <div id="p2">₹100</div>
+            <div id="p3">₹30</div>
+            <div id="p4">₹500</div>
+            <div id="p5">₹999</div>
+            <div id="p6">₹2800</div>
+         </div>
+         <div id="buttons" style="display: flex; flex-direction: column; gap: 15px;"
+         >
+            <button id="but1"> Add item</button>
+            <button id="but2"> Add item</button>
+            <button id="but3"> Add item</button>
+            <button id="but4"> Add item</button>
+            <button id="but5"> Add item</button>
+            <button id="but6"> Add item</button>
+        </div>
+        </article>
+   </div>
+   <div class="rightside">
+      <div id="cart">
+  <div style="font-size: larger; margin: 10px 10px; padding-left: 110px; color: rgb(79, 79, 79);">
+    Added Items
+  </div>
+
+  <table class="cart-table" style="margin-top:5px; color: rgb(61, 61, 61);">
+    <tr class="head-row" style="font-size: 13px;">
+      <th>SL No.</th>
+      <th>Service Name</th>
+      <th>Price</th>
+    </tr>
+
+    <tr><td id="sl1"></td><td id="item1"></td><td id="c1"></td></tr>
+    <tr><td id="sl2"></td><td id="item2"></td><td id="c2"></td></tr>
+    <tr><td id="sl3"></td><td id="item3"></td><td id="c3"></td></tr>
+    <tr><td id="sl4"></td><td id="item4"></td><td id="c4"></td></tr>
+    <tr><td id="sl5"></td><td id="item5"></td><td id="c5"></td></tr>
+    <tr><td id="sl6"></td><td id="item6"></td><td id="c6"></td></tr>
+  </table>
+
+  <div style="border: 1px solid rgb(214, 218, 221); width: 100%; margin-top: 10px;"></div>
+
+    <span style="margin-top: 10px; padding-left: 20px; color: rgb(79, 79, 79);">Total Amount :</span>
+    <span id="totalmoney"></span>
+</div>
+
+      <div id="book">
+         <div class="book1" style="font-size: larger;">Book Now</div>
+         <div class="book2">
+            <label for="name" style="color: rgb(50, 50, 50);">Full Name:</label> <br>
+            <input id="name" type="text" placeholder="enter your name" 
+            style="width: 80%; height: 30px; border-radius: 7px; opacity: 0.5; padding-left: 15px;"
+            >
+         </div>
+         <div class="book3"
+         style="display: flex; gap: 10px;"
+         >
+            <div class="bk1">
+               <label for="email" style="color: rgb(50, 50, 50);">Email ID</label> <br>
+               <input type="text" id="email" placeholder="enter your email"
+               style="height: 30px; border-radius: 7px; opacity: 0.5; padding-left: 15px;">
+            </div>
+            <div class="bk2">
+               <label for="phone" style="color: rgb(50, 50, 50);">Phone Number</label> <br>
+               <input type="text" id="phone" placeholder="enter your phone no"
+               style="height: 30px; border-radius: 7px; opacity: 0.5; padding-left: 15px;">
+            </div>
+         </div>
+         <div class="book4">
+            <button style=" background-color: rgb(34, 179, 236); color: white; border: 0px; width: 80%; height: 40px; border-radius: 10px;"
+             id="booked">Book Now</button>
+         </div>
+         <p style="color: rgb(254, 75, 75);"
+         id="msg"></p>
+      </div>
+   </div>
+  </article>
+  <article class="end">
+   <div id="end1">
+      <div id="end1a">
+         <img style="width: 90px;"
+         src="img1.png" alt="">
+         <p style="font-size: larger;"
+         >Premium Services</p>
+      </div>
+      <div id="end1b">
+         <img style="width: 90px;"
+         src="img2.png" alt="">
+         <p>Quick Support</p>
+      </div>
+      <div id="end1c">
+         <img style="width: 90px;"
+         src="img3.png" alt="">
+         <p>Hassle Free Delivery</p>
+      </div>
+      <div id="end1d">
+         <img style="width: 90px;"
+         src="img4.png" alt="">
+         <p>Affordable Prices</p>
+      </div>
+   </div>
+   <div id="end2">
+      <div id="end2a">
+         Subscribe to our newsletter.
+      </div>
+      <div id="end2b" style="display: flex; flex-direction: column; gap: 15px;">
+         <input style="width: 300px; height: 50px; background-color:rgb(146, 209, 233) ; border: 0px;"
+          type="text" name="" id="subname" placeholder="Full name">
+         <button style="width: 300px; height: 50px; background-color: white; color:rgb(34, 179, 236); border: 0px; font-size: 20px;
+         " id="sub">Subscribe</button>
+      </div>
+      <div id="end2c">
+         <input style="width: 300px; height: 50px; margin-bottom: 60px; background-color: rgb(146, 209, 233); border: 0px;"
+         type="text" placeholder="Email" id="submail">
+         <p id="submsg"></p>
+      </div>
+   </div>
+   <div id="end3"></div>
+  </article>
+
+
+<div id="popup">
+    <div id="box">
+        <h3>Scan to Pay</h3>
+        <img src="pay.jpeg" id="qr">
+        <br><br>
+        <button id="close">Close</button>
+    </div>
+</div>
+
+ 
+
+  <script>
+    let b1=document.getElementById("but1");
+        b1.addEventListener("click",()=>{
+            let item1=document.getElementById("pd1").innerText;
+            let cost1=document.getElementById("p1").innerText;
+            document.getElementById("c1").innerHTML=(cost1);
+            document.getElementById("item1").innerHTML=(item1);
+            document.getElementById("sl1").innerHTML="1";
+            b1.innerText="remove item"
+            updateTotal();
+        })
+        let b2=document.getElementById("but2");
+        b2.addEventListener("click",()=>{
+            let item2=document.getElementById("pd2").innerText;
+            let cost2=document.getElementById("p2").innerText;
+            document.getElementById("c2").innerHTML=(cost2);
+            document.getElementById("item2").innerHTML=(item2);
+            document.getElementById("sl2").innerHTML="2";
+            updateTotal();
+        })
+        let b3=document.getElementById("but3");
+        b3.addEventListener("click",()=>{
+            let item3=document.getElementById("pd3").innerText;
+            let cost3=document.getElementById("p3").innerText;
+            document.getElementById("c3").innerHTML=(cost3);
+            document.getElementById("item3").innerHTML=(item3);
+            document.getElementById("sl3").innerHTML="3";
+            updateTotal();
+        })
+        let b4=document.getElementById("but4");
+        b4.addEventListener("click",()=>{
+            let item4=document.getElementById("pd4").innerText;
+            let cost4=document.getElementById("p4").innerText;
+            document.getElementById("c4").innerHTML=(cost4);
+            document.getElementById("item4").innerHTML=(item4);
+            document.getElementById("sl4").innerHTML="4";
+            updateTotal();
+        })
+        let b5=document.getElementById("but5");
+        b5.addEventListener("click",()=>{
+            let item5=document.getElementById("pd5").innerText;
+            let cost5=document.getElementById("p5").innerText;
+            document.getElementById("c5").innerHTML=(cost5);
+            document.getElementById("item5").innerHTML=(item5);
+            document.getElementById("sl5").innerHTML="5";
+            updateTotal();
+        })
+        let b6=document.getElementById("but6");
+        b6.addEventListener("click",()=>{
+            let item6=document.getElementById("pd6").innerText;
+            let cost6=document.getElementById("p6").innerText;
+            document.getElementById("c6").innerHTML=(cost6);
+            document.getElementById("item6").innerHTML=(item6);
+            document.getElementById("sl6").innerHTML="6";
+            updateTotal();
+        })
+        function updateTotal() {
+    let total = 0;
+
+    let prices = [
+        document.getElementById("c1").innerText,
+        document.getElementById("c2").innerText,
+        document.getElementById("c3").innerText,
+        document.getElementById("c4").innerText,
+        document.getElementById("c5").innerText,
+        document.getElementById("c6").innerText,
+
+    ];
+
+    for (let i = 0; i < prices.length; i++) {
+        if (prices[i] !== "") {
+            total += Number((prices[i]).slice(1,prices[i].length));  // convert to number
+        }
+    }
+
+    document.getElementById("totalmoney").innerText="₹"+total;
+}
+
+ let bookbtn=document.getElementById("booked");
+ 
+ 
+ 
+ bookbtn.addEventListener("click",()=>{
+   let name=document.getElementById("name").value;
+   let email=document.getElementById("email").value;
+   let phone=document.getElementById("phone").value;
+   let msg=document.getElementById("msg");
+   if(name==""||email==""||phone=="")
+    { 
+     msg.innerText="Please fill up the credentials! :(";
+    }
+   else{
+      msg.style.color="rgb(34, 179, 236)"
+      msg.innerText="THANK YOU!"
+      document.getElementById("popup").style.display = "flex";
+
+      document.getElementById("name").value = "";
+document.getElementById("email").value = "";
+document.getElementById("phone").value = "";
+
+   } 
+ })
+
+
+document.getElementById("close").addEventListener("click", () => {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("msg").innerText=""
+
+});
+
+let sub=document.getElementById("sub");
+sub.addEventListener("click",()=>{
+   let subname=document.getElementById("subname").value;
+   let submail=document.getElementById("submail").value;
+   let submsg=document.getElementById("submsg");
+   if(subname==""||submail=="")
+   {
+    submsg.style.color="white";
+    submsg.innerText="fill up credentials!"
+   } 
+   else{
+      submsg.innerText="Subscribed!"
+   }
+})
+  </script>
+</body>
+</html>
